@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3671c8b17f.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/home.css"></link>
+    <title>Document</title>
+</head>
+
+<body>
+<div>
+    <h1 id="heading">
+        
+    <i class="fas fa-address-book"></i>
+    My Contact List</h1>
+</div>
+    <div id="contact-list">
+    <table >
+        <tr>
+            <th>Name &nbsp;</th>
+            <th colspan="2">Phone Number &nbsp;</th>
+        </tr>
+
+        <% for(i of contact_list){%>
+            <tr>
+            <td>
+                <%= i.name %>&nbsp;</td> 
+            <td><%= i.phone %>&nbsp;</td>
+            <td>
+               <!-- <a href="/delete?phone=<%=i.phone%> && name=<%=i.name%>"> for query param-->
+                <a href="/delete/<%=i._id%>">  <!--for string param -->
+                    <i class="fas fa-trash-alt" id="delete"></i>
+            </a>
+            </form>
+        </td>
+        </tr>
+            <% } %>
+
+        
+
+    </table>
+</div>
+
+<div id="new-form">
+    <form action="/create-contact" method="post">
+        <input type="text" name="name" required placeholder="Enter your name">
+        <input type="text" name="phone"required placeholder="Enter your phone number">
+        <button type="submit">Add Contact</button>
+    </form>
+</div>
+
+    <script src="/js/home.js"></script>
+</body>
+
+</html>

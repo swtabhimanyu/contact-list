@@ -1,0 +1,1 @@
+console.log("In assests js folder frandsss");
